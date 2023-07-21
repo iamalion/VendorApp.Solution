@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using MusicLibrary.Models;
+using VendorApp.Models;
 
-namespace MusicLibrary.Controllers
+namespace VendorApp.Controllers
 {
     public class HomeController : Controller
     {
