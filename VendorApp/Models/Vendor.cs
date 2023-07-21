@@ -7,7 +7,7 @@ namespace VendorApp.Models
         public string Name { get; set; }
         public Vendor(string vendorName)
         {
-            name = vendorName;
+            Name = vendorName;
         }
 
     }
