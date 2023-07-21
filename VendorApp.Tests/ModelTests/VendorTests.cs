@@ -7,8 +7,13 @@ namespace VendorApp.Solution
 {
     [TestClass]
 
-    public class VendorTests
+    public class VendorTests : IDisposable
     {
+        public void Dispose()
+        {
+            Vendor.ClearAll();
+        }
+
         [TestMethod]
         public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
         {
@@ -23,13 +28,5 @@ namespace VendorApp.Solution
             Vendor newVendor = new Vendor(vendorName);
         }
 
-        // [TestMethod]
-        // public void GetVendorId_GetsVendorId_Int()
-        // {
-        //     string name = "Vendor Name";
-        //     Vendor newVendor = new Vendor(name);
-        //     int result = newVendor.Id;
-        //     Assert.AreEqual(1, result);
-        // }
     }
 }
