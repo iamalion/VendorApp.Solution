@@ -106,6 +106,23 @@ namespace VendorApp.Tests
 
             Assert.AreEqual(1, result);
         }
+        public void Find_ReturnsCorrectOrder_Order()
+        {
+            string title1 = "Title One";
+            string description1 = "Description One";
+            int price1 = 10;
+            string date1 = "7/21/2023";
+            string title2 = "Title Two";
+            string description2 = "Description Two";
+            int price2 = 100;
+            string date2 = "7/21/2023";
+            Order newOrder1 = new Order(title1, description1, price1, date1);
+            Order newOrder2 = new Order(title2, description2, price2, date2);
+
+            Order result = Order.Find(2);
+
+            Assert.AreEqual(newOrder2, result);
+        }
 
         
     }
