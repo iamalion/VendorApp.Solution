@@ -37,7 +37,6 @@ namespace VendorApp.Controllers
             model.Add("vendor", selectedVendor);
             model.Add("order", vendorOrders);
             return View(model);
-
         }
 
         [HttpPost("/vendors/{vendorId}/orders")]
