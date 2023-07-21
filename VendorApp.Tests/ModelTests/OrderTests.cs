@@ -93,6 +93,21 @@ namespace VendorApp.Tests
             CollectionAssert.AreEqual(newList, result);
 
         }
+        [TestMethod]
+        public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+        {
+            string title1 = "Title One";
+            string description1 = "Description One";
+            int price1 = 10;
+            string date1 = "7/21/2023";
+            Order newOrder = new Order(title1, description1, price1, date1);
+
+            int result = newOrder.Id;
+
+            Assert.AreEqual(1, result);
+        }
+
+        
     }
 
 }

@@ -27,6 +27,16 @@ namespace VendorApp.Solution
             string vendorName = "Vendor Name";
             Vendor newVendor = new Vendor(vendorName);
         }
+        [TestMethod]
+        public void GetId_ReturnsVendorId_Int()
+        {
+            string name = "Vendor Name";
+            Vendor newVendor = new Vendor(name);
+
+            int result = newVendor.Id;
+
+            Assert.AreEqual(1, result);
+        }
 
     }
 }
