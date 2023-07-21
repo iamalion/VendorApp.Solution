@@ -33,7 +33,6 @@ namespace VendorApp.Models
         {
             Orders.Add(order);
         }
-    
          
     }
 }
