@@ -14,5 +14,15 @@ namespace VendorApp.Tests
             Order newOrder = new Order("title", "description", 50, "7/21/2023", true);
             Assert.AreEqual(typeof(Order), newOrder.GetType());
         }
+
+        [TestMethod]
+        public void GetTitle_ReturnsSameTitle_String()
+        {
+            string title = "title";
+            Order newOrder = new Order(title, "description", 50, "7/21/2023", true);
+            string result = newOrder.Title;
+            Assert.AreEqual(title, result);
+        }
     }
+
 }
