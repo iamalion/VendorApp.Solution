@@ -14,5 +14,24 @@ namespace VendorApp.Controllers
             List<Vendor> allVendors = Vendor.GetAll();
             return View(allVendors);
         }
+
+        [HttpGet("/vendors/new")]
+        public ActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost("/vendors")]
+        public ActionResult Create(string vendorName)
+        {
+            Vendor newVendor = new Vendor(vendorName);
+            return RedirectToAction("Index", "Home");
+        }
+
+        // [HttpGet("/vendors/{id}")]
+        // public ActionResult Show(int id)
+        // {
+
+        // }
     }
 }
