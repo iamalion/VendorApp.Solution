@@ -3,7 +3,6 @@ using VendorApp.Models;
 using System.Collections.Generic;
 using System;
 
-
 namespace VendorApp.Solution
 {
     [TestClass]
@@ -15,6 +14,13 @@ namespace VendorApp.Solution
         {
             Vendor newVendor = new Vendor("New Vendor");
             Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+        }
+
+        [TestMethod]
+        public void GetVendorName_ReturnsVendorName_String()
+        {
+            string vendorName = "Vendor Name";
+            Vendor newVendor = new Vendor(vendorName);
         }
     }
 }
