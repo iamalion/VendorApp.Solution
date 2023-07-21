@@ -9,13 +9,12 @@ namespace VendorApp.Models
         public int Price { get; set; }
         public string Date { get; set; }
         public bool IsRush { get; set; }
-        public Order(string title, string description, int price, string date, bool isRush)
+        public Order(string title, string description, int price, string date)
         {
             Title = title;
             Description = description;
             Price = price;
             Date = date;
-            IsRush = isRush;
         }
 
     }
