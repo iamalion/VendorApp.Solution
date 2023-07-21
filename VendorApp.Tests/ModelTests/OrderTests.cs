@@ -74,26 +74,26 @@ namespace VendorApp.Tests
 
             CollectionAssert.AreEqual(newList, result);
         }
-        // [TestMethod]
-        // public void GetAll_ReturnsItems_ItemList()
-        // {
-        // string title1 = "Title One";
-        // string description1 = "Description One";
-        // int price1 = 10;
-        // string date1 = "7/21/2023";
-        // string title2 = "Title Two";
-        // string description2 = "Description Two";
-        // int price2 = 100;
-        // string date2 = "7/21/2023";
-        // Order newOrder1 = new Order(title1, description1, price1, date1);
-        // Order newOrder2 = new Order(title2, description2, price2, date2);
-        // List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+        [TestMethod]
+        public void GetAll_ReturnsOrders_OrderList()
+        {
+        string title1 = "Title One";
+        string description1 = "Description One";
+        int price1 = 10;
+        string date1 = "7/21/2023";
+        string title2 = "Title Two";
+        string description2 = "Description Two";
+        int price2 = 100;
+        string date2 = "7/21/2023";
+        Order newOrder1 = new Order(title1, description1, price1, date1);
+        Order newOrder2 = new Order(title2, description2, price2, date2);
+        List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
-        // List<Order> result = Order.GetAll();
+        List<Order> result = Order.GetAll();
 
-        // CollectionAssert.AreEqual(newList, result);
+        CollectionAssert.AreEqual(newList, result);
 
-        // }
+        }
     }
 
 }
