@@ -6,12 +6,17 @@ using System;
 namespace VendorApp.Tests
 {
     [TestClass]
-    public class OrderTests
+    public class OrderTests : IDisposable
     {
+        public void Dispose()
+        {
+            Order.ClearAll();
+        }
         [TestMethod]
         public void OrderConstructor_CreatesInstanceOfOrder_Order()
         {
-            Order newOrder = new Order("title", "description", 50, "7/21/2023", true);
+            Order newOrder = new Order("title", "description", 50, "7/21/2023");
+           
             Assert.AreEqual(typeof(Order), newOrder.GetType());
         }
 
@@ -19,8 +24,10 @@ namespace VendorApp.Tests
         public void GetTitle_ReturnsSameTitle_String()
         {
             string title = "title";
-            Order newOrder = new Order(title, "description", 50, "7/21/2023", true);
+            Order newOrder = new Order(title, "description", 50, "7/21/2023");
+            
             string result = newOrder.Title;
+            
             Assert.AreEqual(title, result);
         }
 
@@ -28,8 +35,10 @@ namespace VendorApp.Tests
         public void GetDescription_ReturnsSameDescription_String()
         {
             string description = "description";
-            Order newOrder = new Order("title", description, 50, "7/21/2023", true);
+            Order newOrder = new Order("title", description, 50, "7/21/2023");
+            
             string result = newOrder.Description;
+            
             Assert.AreEqual(description, result);
         }
 
@@ -37,8 +46,10 @@ namespace VendorApp.Tests
         public void GetPrice_ReturnsSamePrice_Price()
         {
             int price = 50;
-            Order newOrder = new Order("title", "description", 50, "7/21/2023", true);
+            Order newOrder = new Order("title", "description", 50, "7/21/2023");
+            
             int result = newOrder.Price;
+            
             Assert.AreEqual(price, result);
         }
 
@@ -46,11 +57,43 @@ namespace VendorApp.Tests
         public void GetDate_ReturnsSameDate_Date()
         {
             string date = "7/21/2023";
-            Order newOrder = new Order("title", "description", 50, date, true);
+            Order newOrder = new Order("title", "description", 50, date);
+
             string result = newOrder.Date;
+            
             Assert.AreEqual(date, result);
         }
 
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_ItemList()
+        {
+        
+            List<Order> newList = new List<Order> { };
+
+            List<Order> result = Order.GetAll();
+
+            CollectionAssert.AreEqual(newList, result);
+        }
+        // [TestMethod]
+        // public void GetAll_ReturnsItems_ItemList()
+        // {
+        // string title1 = "Title One";
+        // string description1 = "Description One";
+        // int price1 = 10;
+        // string date1 = "7/21/2023";
+        // string title2 = "Title Two";
+        // string description2 = "Description Two";
+        // int price2 = 100;
+        // string date2 = "7/21/2023";
+        // Order newOrder1 = new Order(title1, description1, price1, date1);
+        // Order newOrder2 = new Order(title2, description2, price2, date2);
+        // List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+        // List<Order> result = Order.GetAll();
+
+        // CollectionAssert.AreEqual(newList, result);
+
+        // }
     }
 
 }
