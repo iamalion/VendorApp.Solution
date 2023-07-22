@@ -15,7 +15,6 @@ namespace VendorApp.Models
             Id = _instances.Count;
             Orders = new List<Order>{};
         }
-
         public static void ClearAll()
         {
             _instances.Clear();
@@ -32,7 +31,6 @@ namespace VendorApp.Models
         public void AddOrder(Order order)
         {
             Orders.Add(order);
-        }
-         
+        }  
     }
 }
