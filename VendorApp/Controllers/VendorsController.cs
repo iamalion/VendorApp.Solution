@@ -39,18 +39,19 @@ namespace VendorApp.Controllers
             return View(model);
         }
 
-        [HttpPost("/vendors/{vendorId}/orders")]
+         [HttpPost("/vendors/{vendorId}/orders")]
         public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
         {
-    
-            Dictionary<string, object> model = new Dictionary<string, object>();
             Vendor foundVendor = Vendor.Find(vendorId);
+            if (foundVendor == null)
+            {
+                return RedirectToAction("Error"); 
+            }
+
             Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
             foundVendor.AddOrder(newOrder);
-            List<Order> vendorOrders = foundVendor.Orders;
-            model.Add("orders", vendorOrders);
-            model.Add("vendor", foundVendor);
-            return View("Show", model);
+
+            return RedirectToAction("Show", "Orders", new { vendorId = vendorId, orderId = newOrder.Id });
         }
     }
 }
