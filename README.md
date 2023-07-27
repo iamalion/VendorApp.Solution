@@ -1,8 +1,6 @@
 # Pierre's Vendor and Order Tracker
 By: Lindsay Warr
 
-Template repo for C# Projects.
-
 ## **Technologies Used**
 
 - C#
@@ -24,7 +22,7 @@ This is a C# web application using two classes to track various vendors and thei
 
 ## **Known Bugs**
 
-None at this time
+CSS is not yet functiontion
 
 ## **License**
 MIT 
