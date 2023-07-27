@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using VendorApp.Models;
 
 namespace VendorApp.Controllers
 {
